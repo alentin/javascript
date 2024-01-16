@@ -1,0 +1,22 @@
+document.addEventListener("DOMContentLoaded", function () {
+    var audio = document.getElementById("backgroundAudio");
+    var audioButton = document.getElementById("audioButton");
+
+    var soundDuration = 40000; // Setează durata sunetului în milisecunde (40 de secunde în acest exemplu)
+
+    // Funcție pentru a porni sunetul
+    function playAudio() {
+        audio.play();
+        // Oprește sunetul după durata specificată
+        setTimeout(function () {
+            audio.pause();
+            audio.currentTime = 0; // Resetează timpul sunetului la început pentru redare ulterioară
+        }, soundDuration);
+    }
+
+    // Declanșează funcția când utilizatorul face clic pe buton
+    audioButton.addEventListener("click", function () {
+        console.log("Buton apăsat");
+        playAudio();
+    });
+});
